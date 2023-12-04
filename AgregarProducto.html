@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Tables</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="Administrador.html">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">PhoneTech</div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+            <a class="nav-link" href="Administrador.html">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Opciones
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="AgregarProducto.html" data-toggle="collapse"
+               data-target="collapseUtilities"
+               aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Productos</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="AgregarUsuarios.html">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Usuarios</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="Index.html">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Salir</span></a>
+        </li>
+
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+
+            </nav>
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <h1> Agregar Producto</h1>
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <label for="cellPhoneBrand" class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="cellPhoneBrand" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="cellPhoneModel" class="form-label">Modelo</label>
+                        <input type="text" class="form-control" id="cellPhoneModel" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="cellPhoneScreenSize" class="form-label">Tamaño de Pantalla (pulgadas)</label>
+                        <input type="number" step="0.01" class="form-control" id="cellPhoneScreenSize" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="cellPhoneProcessor" class="form-label">Procesador</label>
+                        <input type="text" class="form-control" id="cellPhoneProcessor" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="cellPhoneRAM" class="form-label">RAM (GB)</label>
+                        <input type="number" class="form-control" id="cellPhoneRAM" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="cellPhonePrice" class="form-label">Precio</label>
+                        <input type="number" step="0.01" class="form-control" id="cellPhonePrice" required>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Agregar Celular</button>
+                    </div>
+                </form>
+
+                <br>
+                <br>
+
+                <h1 class="h3 mb-2 text-gray-800">Tabla de Celulares</h1>
+                <p class="mb-4">A continuación se muestra una tabla con datos de celulares de diferentes marcas.</p>
+
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Lista de Celulares</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Marca</th>
+                                    <th>Modelo</th>
+                                    <th>Pantalla</th>
+                                    <th>Procesador</th>
+                                    <th>RAM</th>
+                                    <th>Precio</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!-- Aquí puedes agregar tus registros de celulares -->
+                                <tr>
+                                    <td>Samsung</td>
+                                    <td>Galaxy S21</td>
+                                    <td>6.2 pulgadas</td>
+                                    <td>Exynos 2100</td>
+                                    <td>8 GB</td>
+                                    <td>$799</td>
+                                </tr>
+                                <tr>
+                                    <td>Apple</td>
+                                    <td>iPhone 13 Pro</td>
+                                    <td>6.1 pulgadas</td>
+                                    <td>A15 Bionic</td>
+                                    <td>6 GB</td>
+                                    <td>$999</td>
+                                </tr>
+                                <tr>
+                                    <td>Google</td>
+                                    <td>Pixel 6</td>
+                                    <td>6.4 pulgadas</td>
+                                    <td>Google Tensor</td>
+                                    <td>8 GB</td>
+                                    <td>$699</td>
+                                </tr>
+                                <tr>
+                                    <td>Samsung</td>
+                                    <td>Galaxy S21</td>
+                                    <td>6.2 pulgadas</td>
+                                    <td>Exynos 2100</td>
+                                    <td>8 GB</td>
+                                    <td>$799</td>
+                                </tr>
+                                <tr>
+                                    <td>Apple</td>
+                                    <td>iPhone 13 Pro</td>
+                                    <td>6.1 pulgadas</td>
+                                    <td>A15 Bionic</td>
+                                    <td>6 GB</td>
+                                    <td>$999</td>
+                                </tr>
+                                <tr>
+                                    <td>Google</td>
+                                    <td>Pixel 6</td>
+                                    <td>6.4 pulgadas</td>
+                                    <td>Google Tensor</td>
+                                    <td>8 GB</td>
+                                    <td>$699</td>
+                                </tr>
+                                <tr>
+                                    <td>OnePlus</td>
+                                    <td>OnePlus 9 Pro</td>
+                                    <td>6.7 pulgadas</td>
+                                    <td>Snapdragon 888</td>
+                                    <td>12 GB</td>
+                                    <td>$899</td>
+                                </tr>
+                                <tr>
+                                    <td>Xiaomi</td>
+                                    <td>Redmi Note 10</td>
+                                    <td>6.43 pulgadas</td>
+                                    <td>Snapdragon 678</td>
+                                    <td>4 GB</td>
+                                    <td>$199</td>
+                                </tr>
+                                <tr>
+                                    <td>Sony</td>
+                                    <td>Xperia 1 III</td>
+                                    <td>6.5 pulgadas</td>
+                                    <td>Snapdragon 888</td>
+                                    <td>12 GB</td>
+                                    <td>$1,199</td>
+                                </tr>
+                                <tr>
+                                    <td>Motorola</td>
+                                    <td>Moto G Power (2021)</td>
+                                    <td>6.6 pulgadas</td>
+                                    <td>Snapdragon 662</td>
+                                    <td>4 GB</td>
+                                    <td>$249</td>
+                                </tr>
+                                <tr>
+                                    <td>LG</td>
+                                    <td>LG Velvet</td>
+                                    <td>6.8 pulgadas</td>
+                                    <td>Snapdragon 765</td>
+                                    <td>6 GB</td>
+                                    <td>$699</td>
+                                </tr>
+                                <tr>
+                                    <td>Nokia</td>
+                                    <td>Nokia 8.3 5G</td>
+                                    <td>6.81 pulgadas</td>
+                                    <td>Snapdragon 765G</td>
+                                    <td>8 GB</td>
+                                    <td>$499</td>
+                                </tr>
+                                <tr>
+                                    <td>Asus</td>
+                                    <td>Asus ROG Phone 5</td>
+                                    <td>6.78 pulgadas</td>
+                                    <td>Snapdragon 888</td>
+                                    <td>16 GB</td>
+                                    <td>$999</td>
+                                </tr>
+                                <tr>
+                                    <td>Huawei</td>
+                                    <td>Huawei P40 Pro</td>
+                                    <td>6.58 pulgadas</td>
+                                    <td>Kirin 990</td>
+                                    <td>8 GB</td>
+                                    <td>$899</td>
+                                </tr>
+                                <tr>
+                                    <td>Oppo</td>
+                                    <td>Oppo Find X3 Pro</td>
+                                    <td>6.7 pulgadas</td>
+                                    <td>Snapdragon 888</td>
+                                    <td>12 GB</td>
+                                    <td>$1,099</td>
+                                </tr>
+                                <tr>
+                                    <td>Vivo</td>
+                                    <td>Vivo V21 5G</td>
+                                    <td>6.44 pulgadas</td>
+                                    <td>MediaTek Dimensity 800U</td>
+                                    <td>8 GB</td>
+                                    <td>$499</td>
+                                </tr>
+                                <tr>
+                                    <td>Realme</td>
+                                    <td>Realme 8 Pro</td>
+                                    <td>6.4 pulgadas</td>
+                                    <td>Snapdragon 720G</td>
+                                    <td>6 GB</td>
+                                    <td>$299</td>
+                                </tr>
+                                <tr>
+                                    <td>ZTE</td>
+                                    <td>ZTE Axon 30 Ultra</td>
+                                    <td>6.67 pulgadas</td>
+                                    <td>Snapdragon 888</td>
+                                    <td>8 GB</td>
+                                    <td>$799</td>
+                                </tr>
+                                <tr>
+                                    <td>Lenovo</td>
+                                    <td>Lenovo Legion Phone Duel 2</td>
+                                    <td>6.92 pulgadas</td>
+                                    <td>Snapdragon 888</td>
+                                    <td>12 GB</td>
+                                    <td>$899</td>
+                                </tr>
+                                <tr>
+                                    <td>BlackBerry</td>
+                                    <td>BlackBerry Key2</td>
+                                    <td>4.5 pulgadas</td>
+                                    <td>Snapdragon 660</td>
+                                    <td>6 GB</td>
+                                    <td>$599</td>
+                                </tr>
+                                <tr>
+                                    <td>Nokia</td>
+                                    <td>Nokia 3310</td>
+                                    <td>2.4 pulgadas</td>
+                                    <td>Mediatek MT6260A</td>
+                                    <td>16 MB</td>
+                                    <td>$49</td>
+                                </tr>
+                                <tr>
+                                    <td>Motorola</td>
+                                    <td>Moto E6</td>
+                                    <td>5.5 pulgadas</td>
+                                    <td>Qualcomm Snapdragon 435</td>
+                                    <td>2 GB</td>
+                                    <td>$99</td>
+                                </tr>
+
+                                <!-- Puedes continuar agregando más registros aquí -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="../../../WebstormProjects/PaginaWebCelulares/js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="../../../WebstormProjects/PaginaWebCelulares/css/datatables/jquery.dataTables.min.js"></script>
+<script src="../../../WebstormProjects/PaginaWebCelulares/css/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="../../../WebstormProjects/PaginaWebCelulares/js/demo/datatables-demo.js"></script>
+
+</body>
+
+</html>
+
+
